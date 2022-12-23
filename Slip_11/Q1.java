@@ -1,14 +1,14 @@
 import java.util.*;
 import java.io.*;
 
-public class A4
+public class Q1
 {
     int dd, mm, yy;
 
-    public A4()
+    public Q1()
     {
     }
-    public A4(int dd, int mm, int yy)
+    public Q1(int dd, int mm, int yy)
     {
         this.dd=dd;
         this.mm=mm;
@@ -20,8 +20,8 @@ public class A4
     }
     public static void main(String[] args) throws Exception
     {
-        A4 m1 = new A4();
-        A4 m2 = new A4(9,12,2002);
+        Q1 m1 = new Q1();
+        Q1 m2 = new Q1(9,12,2002);
         m2.display();
     }
 }
