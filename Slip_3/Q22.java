@@ -3,26 +3,36 @@ import java.io.*;
 
 public class Q22
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
-        File f = new File("Ball.txt");
+        String filename;
+        Scanner sc = new Scanner(System.in);
 
-        FileInputStream fis = new FileInputStream(f);
-        FileOutputStream fos = new FileOutputStream("NewBall.txt");
+        System.out.println("Enter the name of file with extension: ");
+        filename = sc.nextLine();
 
-        int value;
+        String line = null;
 
-        while((value = fis.read()) != -1)
+        try
         {
-            System.out.print((char)value);
-            if(Character.isLowerCase(value))
+            FileReader filereader = new FileReader(filename);
+            FileWriter filewriter = new FileWriter("NewBall.txt");
+            //always wrap the FileReader in BufferedReader 
+            BufferedReader bufferedreader = new BufferedReader(filereader);
+
+            while((line = bufferedreader.readLine()) != null) 
             {
-                fos.write((int)Character.toUpperCase(value));
+                System.out.println(line.toUpperCase());
+                filewriter.write(line.toUpperCase());
             }
-            //fos.write(value.toUpperCase());
+
+            bufferedreader.close(); // always close the file after its use
+            filewriter.close(); // always close the file after its use
         }
-        fis.close();
-        fos.close();
-        System.out.println("\nSuccessfully Copied!");
+        catch(Exception e)
+        {
+            System.out.println("\nError occurred");
+            System.out.println("Exception Name: " +e);
+        }
     }
 }
