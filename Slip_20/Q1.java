@@ -1,13 +1,13 @@
-import java,util.*;
+import java.util.*;
 import java.io.*;
 
 public class Q1
 {
     public static void main(String args[])
     {
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-        int c = Integer.parseInt(args[2]);
+        int x = Integer.parseInt(args[0]);
+        int y = Integer.parseInt(args[1]);
+        int z = Integer.parseInt(args[2]);
 
         if (x >= y)
         {
