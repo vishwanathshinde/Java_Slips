@@ -16,5 +16,10 @@ public class Q1
         {
             System.out.println(itr.next());
         }
+
+        while(itr.hasPrevious())
+        {
+            System.out.println(itr.previous());
+        }
     }
 }

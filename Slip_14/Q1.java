@@ -9,7 +9,7 @@ public class Q1
         try
         {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/TempDb","mkyong","123456");
+            c = DriverManager.getConnection("jdbc2:postgresql://192.168.5.200/bcaty50","bcaty50","");
         }
         catch(Exception e)
         {
