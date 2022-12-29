@@ -29,7 +29,7 @@ class factorial
                     fact = fact * i;
                     i++;
                 }
-        System.out.println("Factorial is: "+fact);
+                System.out.println("Factorial is: "+fact);
         }
         catch(NumberException e)
         {
