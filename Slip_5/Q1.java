@@ -36,10 +36,11 @@ class factorial
 
     void factorialnumber()
     {
-        int fact = 0;
-        for(int i=1; i<=a; i++)
+        int i=1, fact = 1;
+        while(i<=a)
         {
             fact = fact * i;
+            i++;
         }
         System.out.println("Factorial is: "+fact);
     }
