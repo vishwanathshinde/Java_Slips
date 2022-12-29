@@ -57,7 +57,7 @@ public class Q21
             E[i] = new Employee();
             E[i].accept();
         }
-        for(i=0; i<n; i++)
+        for(i=0; i<1; i++)
         {
             E[i].maxsalary(E,n);
         }
