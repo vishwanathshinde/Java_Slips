@@ -9,8 +9,8 @@ public class Q1
         System.out.print("Enter a number: ");
         int a = Integer.parseInt(br.readLine());
         
-        int sum=0;
-        int i =1;
+        int sum = 0;
+        int i = 1;
 
         while(i <= a/2)
         {
