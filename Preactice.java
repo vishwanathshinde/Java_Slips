@@ -3,34 +3,33 @@ import java.io.*;
 
 public class Preactice
 {
-    public static void main(String args[]) throws IOException
+    public static void main(String[] args)
     {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter three numbers: ");
-        int x = Integer.parseInt(br.readLine());
-        int y = Integer.parseInt(br.readLine());
-        int z = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the file name");
+        String filename = sc.nextLine();
 
-        if (x >= y)
+        String line;
+        try
         {
-            if (y >= z)
-                System.out.print("In order " + z + " "+ y + " " + x);
+            FileReader filereader = new FileReader(filename);
+            FileWriter filewriter = new FileWriter("NewBall.txt");
+            //Always wrap the file reader in buffered reader
+            BufferedReader bufferedreader = new BufferedReader(filereader);
 
-            if  (z >= x)
-                System.out.print("In order " + y + " "+ x + " " + z);
+            while((line = bufferedreader.readLine()) != null)
+            {
+                System.out.println(line.toUpperCase());
+                filewriter.write(line.toUpperCase());
+            }
 
-            if (x > z)
-                System.out.print("In order " + y + " " + z + " " + x);
+            bufferedreader.close();
+            filewriter.close();
         }
-
-        if (y > x)
+        catch(Exception e)
         {
-            if (z >= y)
-                System.out.print("In order " + x + " " + y + " "+ z);
-            if (z >= x)
-                System.out.print("In order " + y + " " + x + " " + z);
-            if (x > z)
-                System.out.print("In order " + y + " " + z + " " + x);
+            System.out.println("Error Occured");
+            e.printStackTrace();
         }
     }
 }

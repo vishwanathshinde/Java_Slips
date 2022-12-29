@@ -37,7 +37,7 @@ class Product
                 pos1 = i;
             }
         }
-        System.out.println("Name of product having minimum price is: \n");
+        System.out.println("Name of product having minimum price is: ");
         P[pos1].display();
     }
 }
@@ -53,9 +53,9 @@ public class Q21
             P[i] = new Product();
             P[i].accept();
         }
-        for(int i=0; i<P.length; i++)
+        for(int i=0; i<1; i++)
         {
-            P[i].minprice(P,5);
+            P[i].minprice(P,1);
         }
     }
 }
