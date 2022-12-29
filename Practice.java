@@ -8,89 +8,90 @@ class InvalidDateException extends Exception
 
 class MyDate
 {
-    int day, mon, yr;
+    int day , month, year;
 
-    public void accept(int day, int mon, int yr)
+    void accept(int day, int month, int year)
     {
-        this.day = day;
-        this.mon = mon;
-        this.yr = yr;
+        this.day=day;
+        this.month=month;
+        this.year=year;
     }
 
-    public void display()
+    void display()
     {
-        System.out.println("Date is valid: "+day+"/"+mon+"/"+yr);
+        System.out.println("Date is valid : " + day + "/" + month + "/" + year);
     }
 }
 
-public class Q21
+public class Practice
 {
     public static void main(String[] args) throws IOException
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter day: ");
-        int day = Integer.parseInt(br.readLine());
-        System.out.println("Enter month: ");
-        int mon = Integer.parseInt(br.readLine());
-        System.out.println("Enter year: ");
-        int yr = Integer.parseInt(br.readLine());
 
-        int flag=0;
+        System.out.println("Enter a day: ");
+        int day = Integer.parseInt(br.readLine());
+        System.out.println("Enter a month: ");
+        int month = Integer.parseInt(br.readLine());
+        System.out.println("Enter a year: ");
+        int year = Integer.parseInt(br.readLine());
+
+        int flag = 0;
 
         try
         {
-            if(mon<=0 || mon>12)
+            if(month<=0 || month>12)
                 throw new InvalidDateException();
             else
             {
-                if(mon==1 || mon==3 || mon==5 || mon==7 || mon==8 || mon==10 || mon==12)
+                if( month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12 )
                 {
-                    if(day<0 || day>31)
+                    if(day<1 || day>31)
                         throw new InvalidDateException();
                     else
                         flag = 1;
-                }  
+                }
 
-                else if(mon==2)
+                else if( month == 2)
                 {
-                    if(yr%4==0)
+                    if(year%4==0)
                     {
                         if(day<1 || day>29)
                             throw new InvalidDateException();
                         else
-                            flag=1;
+                            flag = 1;
                     }
                     else
                     {
                         if(day<1 || day>28)
                             throw new InvalidDateException();
-                        else 
+                        else
                             flag = 1;
                     }
                 }
 
                 else
                 {
-                    if(mon==4 || mon==6 || mon==9 || mon==11)
+                    if(month == 4 || month == 6 || month == 9 || month == 11)
                     {
                         if(day<1 || day>30)
-                            throw new InvalidDateException();
+                            throw  new InvalidDateException();
                         else
-                            flag =1;
+                            flag = 1;
                     }
-                }  
+                }
             }
 
-            if(flag==1)
+            if (flag == 1)
             {
                 MyDate dt = new MyDate();
-                dt.accept(day,mon,yr);
+                dt.accept(day, month, year);
                 dt.display();
             }
         }
         catch(InvalidDateException e)
         {
-            System.out.println("Invalid date!");
+            System.out.println("Date is invalid !");
         }
     }
 }
